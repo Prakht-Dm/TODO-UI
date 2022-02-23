@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;1,300;1,400&family=Work+Sans:ital,wght@0,100;0,200;0,300;0,400;1,100;1,200;1,300&display=swap"
+        rel="stylesheet">
+    <link rel='stylesheet' href="style.css">
+    </link>
+</head>
+
+<body>
+    <div class="workWindow" id='mainWindow'>
+        <div class="row" id='HIGHTask'>HIGH</div>
+        <form id='formText'>
+       
+ 
+                <input type="text" placeholder="Добавить важных дел" class="newTask"><input type="image"
+                    src="images/close-icon.svg" class="cross">
+            
+        </form>
+        <div class="row">
+            <div class="activeTask" id='task0'>
+                <div class="checkBox">
+                    <input type="checkbox" id="r1">
+                    <label for="r1"><span></span></label>
+                </div>
+                <p>Вот вам и супер интересная тема.
+                    Вы наверняка заметили что ваши файлы с кодом становятся все объемнее, что хочется вынести некоторые
+                    вещи куда-то за пределы основной программы.</p>
+                <button class="cross2" id="c1">
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="activeTask" id='task1'>
+                <div class="checkBox">
+                    <input type="checkbox" id="r2">
+                    <label for="r2"><span></span></label>
+                </div>
+                <p>Сверстать этот TODO list</p>
+                <button class="cross2"  id="c2">
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="activeTask" id='task2'>
+                <div class="checkBox">
+                    <input type="checkbox" id="r3">
+                    <label for="r3"><span></span></label>
+                </div>
+                <p>Начать делать задачу</p>
+                <button class="cross2" id="c3">
+
+            </div>
+        </div>
+        <div class="row">LOW</div>
+        <form id='formText2'>
+            <input type="form" placeholder="Добавить" class="newTask"><input
+                    type="image" src="images/close-icon.svg" class="cross">
+        </form>
+    
+    <div class="row">
+        <div class="activeTask" id='task3'>
+            <div class="checkBox">
+                <input type="checkbox" id="r4">
+                <label for="r4"><span></span></label>
+            </div>
+            <p>Начать делать задачу</p>
+            <button class="cross2"  id="c4">
+
+        </div>
+    </div>
+
+
+
+    </div>
+
+
+    <script src="main.js"></script>
+</body>
+
+</html>
