@@ -3,46 +3,37 @@ let id=5;
 function createTask (event){ 
     event.preventDefault();
     let currentElement=this.firstElementChild;
-    if(this.firstElementChild.value&&currentElement.value.split(" ").join("")!=""){  
+    if(currentElement.value.split(" ").join("")!=""){  
 let valueTask=currentElement.value;
 let outTask = document.createElement('div');
 outTask.className='row';
 outTask.innerHTML=`<div class='activeTask'><div class="checkBox"><input type="checkbox" id="r${id}"><label for="r${id}"><span></span></label></div><p>${valueTask}</p><button class="cross2"></div>`;
 this.after(outTask);
     }
-    let crossButtons=document.querySelectorAll('.cross2');
-    for (let k of crossButtons){
-    k.addEventListener('click',  deleteTask);
-    }
-    let crossCheck=document.querySelectorAll('div.checkBox:first-child');
-    for (let k of crossCheck){
-    k.addEventListener('change',  changeBgColor);
-    }
-        
+    addNewEvent('.cross2','click', deleteTask);
+    addNewEvent('div.checkBox:first-child','change',changeBgColor);       
     currentElement.value='';
     id++;
 }
 
-function deleteTask(event){
-    event.preventDefault();
+function deleteTask(){  
 this.parentNode.parentNode.remove();
 }
 
 function changeBgColor(){
- if (this.parentNode.parentElement.style.background) {this.parentNode.parentElement.style.background=""} else  {this.parentNode.parentElement.style.background="#F4F4F4";}
-    
-}
-let crossButtons=document.querySelectorAll('.cross2');
-for (let k of crossButtons){
-k.addEventListener('click',  deleteTask);
+ this.parentNode.parentElement.style.background = (this.parentNode.parentElement.style.background) ? "" : "#F4F4F4";
 }
 
-let crossCheck=document.querySelectorAll('div.checkBox:first-child');
-for (let k of crossCheck){
-k.addEventListener('change',  changeBgColor);
+function addNewEvent(classN, events, func){
+    let crossCheck=document.querySelectorAll(classN);
+    for (let k of crossCheck){
+    k.addEventListener(events,  func);
+    }  
 }
-formText.addEventListener('submit', createTask);
-formText2.addEventListener('submit', createTask);
+addNewEvent('.cross2','click', deleteTask);
+addNewEvent('div.checkBox:first-child','change', changeBgColor);
+addNewEvent('form','submit', createTask);
+
 
 
 
